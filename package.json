@@ -4,7 +4,9 @@
   "description": "This is backend for the My Contacts App. It uses Express framework of Node.js.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "./node_modules/.bin/nodemon server.js"
   },
   "author": "Mitesh Prajapati",
   "license": "MIT",
