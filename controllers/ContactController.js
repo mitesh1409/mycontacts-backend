@@ -12,6 +12,7 @@ const getContacts = (req, res) => {
 // @route POST /contacts
 // @access public
 const createContact = (req, res) => {
+    console.log('req.body', req.body);
     res.status(201)
         .json({
             message: 'POST /contacts - Create a contact'
