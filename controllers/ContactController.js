@@ -12,7 +12,13 @@ const getContacts = (req, res) => {
 // @route POST /contacts
 // @access public
 const createContact = (req, res) => {
-    console.log('req.body', req.body);
+    const { name, email, phone } = req.body;
+
+    if (!name || !email || !phone) {
+        res.status(400);
+        throw new Error('name, email and phone are required!');
+    }
+
     res.status(201)
         .json({
             message: 'POST /contacts - Create a contact'
