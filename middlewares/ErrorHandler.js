@@ -15,8 +15,20 @@ const errorHandler = (err, req, res, next) => {
             errTitle = 'Not Found';
             break;
 
-        default:
+        case HttpResponse.unauthorized.code:
+            errTitle = 'Unauthorised';
+            break;
+
+        case HttpResponse.forbidden.code:
+            errTitle = 'Forbidden';
+            break;
+
+        case HttpResponse.internalServerError.code:
             errTitle = 'Internal Server Error';
+            break;
+
+        default:
+            console.log('No errors! All good :)');
             break;
     }
 
