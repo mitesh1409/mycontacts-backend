@@ -1,7 +1,7 @@
 // @desc GET /contacts - Get all the contacts
 // @route GET /contacts
 // @access public
-const getContacts = (req, res) => {
+const getContacts = async (req, res) => {
     res.status(200)
         .json({
             message: 'GET /contacts - Get all the contacts'
@@ -11,7 +11,7 @@ const getContacts = (req, res) => {
 // @desc POST /contacts - Create a contact
 // @route POST /contacts
 // @access public
-const createContact = (req, res) => {
+const createContact = async (req, res) => {
     const { name, email, phone } = req.body;
 
     if (!name || !email || !phone) {
@@ -28,7 +28,7 @@ const createContact = (req, res) => {
 // @desc GET /contacts/:id - Get contact with id
 // @route GET /contacts/:id
 // @access public
-const getContact = (req, res) => {
+const getContact = async (req, res) => {
     res.status(200)
         .json({
             message: `GET /contacts/:id - Get contact with id: ${req.params.id}`
@@ -38,7 +38,7 @@ const getContact = (req, res) => {
 // @desc PUT /contacts/:id - Update contact with id
 // @route PUT /contacts/:id
 // @access public
-const updateContact = (req, res) => {
+const updateContact = async (req, res) => {
     res.status(200)
         .json({
             message: `PUT /contacts/:id - Update contact with id: ${req.params.id}`
@@ -48,7 +48,7 @@ const updateContact = (req, res) => {
 // @desc DELETE /contacts/:id - Delete contact with id
 // @route DELETE /contacts/:id
 // @access public
-const deleteContact = (req, res) => {
+const deleteContact = async (req, res) => {
     res.status(200)
         .json({
             message: `DELETE /contacts/:id - Delete contact with id: ${req.params.id}`
