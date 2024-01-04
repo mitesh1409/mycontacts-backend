@@ -1,7 +1,7 @@
 const express = require('express');
 const errorHandler = require('./middlewares/ErrorHandler');
 const app = express();
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const port = process.env.PORT || 3000;
 require('./database/connection');
 const contactsRouter = require('./routes/contacts');
