@@ -1,12 +1,5 @@
 const mongoose = require('mongoose');
 
-async function connect() {
-    await mongoose.connect(process.env.DB_CONNECTION_STRING);
-    console.log('Connected to mycontacts-backend database successfully :)');
-}
-
-connect().catch(err => console.log(err));
-
 const contactSchema = new mongoose.Schema(
     {
         name: {
