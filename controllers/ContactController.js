@@ -18,12 +18,21 @@ const getContacts = asyncHandler(async (req, res) => {
 // @route POST /contacts
 // @access public
 const createContact = asyncHandler(async (req, res) => {
-    const { name, email, phone } = req.body;
+    const { name, email, phone, description } = req.body;
 
     if (!name || !email || !phone) {
         res.status(400);
         throw new Error('name, email and phone are required!');
     }
+
+    const contact = await Contact.create({
+        name,
+        email,
+        phone,
+        description
+    });
+
+    console.log('Created a contact record', contact);
 
     res.status(201)
         .json({
